@@ -10,6 +10,7 @@ a simple brainfuck compiler
 Well, let me tell you.
 
 First, you transpile it to C, using this table from [Wikipedia](https://en.wikipedia.org/wiki/Brainfuck):
+
 | brainfuck command | C equivalent                                                |
 |-------------------|-------------------------------------------------------------|
 | (Program Start)   | `char array[INFINITELY_LARGE_SIZE] = {0}; char *ptr=array;` |
@@ -21,6 +22,7 @@ First, you transpile it to C, using this table from [Wikipedia](https://en.wikip
 | `,`               | `*ptr=getchar();`                                           |
 | `[`               | `while (*ptr) {`                                            |
 | `]`               | `}`                                                         |
+
 Then you compile the transpiled C file using `clang -O3` magic.
 
 Yeah, that's it.
